@@ -1,0 +1,19 @@
+version: "3.7"
+
+services:
+  postgres:
+    container_name: postgres_cod3r_java
+    image: postgres:12.2
+    environment:
+      POSTGRES_DB: curso_java_sb
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: 12345678
+      PGDATA: /data/postgres
+    volumes:
+      - postgres:/data/postgres
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+
+volumes:
+  postgres:
